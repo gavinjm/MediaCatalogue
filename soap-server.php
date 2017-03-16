@@ -1,4 +1,6 @@
 <?php 
+require_once '.\lib\functions.php';
+
 function getCatalogEntry($genreId,$uid){
 if($genreId=='Jazz') 
 return "<HTML>
@@ -18,7 +20,7 @@ XML</td><td>October 2005</td>
 <td>Guitar</td>
 <td>Al Di Meola</td></tr>
 </table>
-<a href='index.html'>Back</a>
+<a href='index.php'>Back</a>
 </BODY>
 </HTML>";
   
@@ -55,7 +57,7 @@ return "<HTML>
  </HEAD
  <BODY>
 <h3>Setting the genre to: ".$genre."</h3>
- <a href='index.html'>Back</a>
+ <a href='index.php'>Back</a>
 </BODY>
 </HTML>";
 }

@@ -1,5 +1,5 @@
 <?php
-require_once('functions.php');
+require_once('.\lib\functions.php');
 
 try {
 	$arrContextOptions=array("ssl"=>array( "verify_peer"=>false, "verify_peer_name"=>false,'crypto_method' => STREAM_CRYPTO_METHOD_TLS_CLIENT));
@@ -16,13 +16,14 @@ try {
 } catch (Exception $e){
 	echo "<br>Error : ".$e->getLine()." ".$e->getMessage();
 }
-  $response= "<HTML>
+  $response = "<HTML>
  <HEAD>
   <TITLE>THS Client Lookup</TITLE>
  </HEAD
  <BODY>
-<p>THS-Client</p>
-<a href='index.php'>Home</a>
+<p>THS-Client</p>";
+$tail = "
+<a href='index.php'>New Home</a>
 </BODY>
 </HTML>";
   
@@ -32,7 +33,7 @@ try {
  if ($genre != ''){
  try {	  
 	$response = $client->getCatalogEntry($genre,$uid);
-	echo $response;
+	echo $response.$tail;
 	//echo "<br>Response:" . $client->__getLastResponse();
  } catch (Exception $e){
     echo "Error : line =".$e->getLine()."  Message= ".$e->getMessage();

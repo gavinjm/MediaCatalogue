@@ -4,8 +4,8 @@
 /* Constants
    
 */
-define('__ROOT__', dirname(dirname(__FILE__).'\\media_catalogue'));
-define('root', dirname(dirname(__FILE__).'\\media_catalogue'));
+define('__ROOT__', dirname(dirname(__FILE__).'\\mcat'));
+define('root', dirname(dirname(__FILE__).'\\mcat'));
 define('hello','Hello World');
   
 

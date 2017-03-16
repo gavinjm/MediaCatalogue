@@ -6,7 +6,6 @@ $catalogId = $_POST['catalogueId'];
  </HEAD
  <BODY>
  <a href='index.php'>Home</a>";
- 
  $tail ="</BODY></HTML>";
 
 try {

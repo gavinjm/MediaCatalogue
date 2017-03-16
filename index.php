@@ -1,5 +1,5 @@
 <?php 
-require_once 'functions.php';
+require_once 'lib\\functions.php';
 require_once "soap-server.php";
 
 ?>
@@ -8,8 +8,8 @@ require_once "soap-server.php";
   <TITLE>Media Catalog</TITLE>
  </HEAD
  <BODY>
-<table border='1' cellpadding='10px'><tr><td><a href="media_catalogue.php">Media Catalogue</a></td><td><a href="Remove_Bom.php">BOM</a></td>
-<td><a href="Backup.php">Back Up</a></td><td><a href="KoolPHPSuite\index.php">Kool Tools</a></td></tr></table>
+<table border='1' cellpadding='10px'><tr><td><a href="media_catalogue.php">Media Catalogue</a></td>
+<td><a href="Backup.php">Back Up</a></td></tr></table>
 
 <h3>Testing Web Service WSDL File</h3>
 
@@ -22,6 +22,7 @@ require_once "soap-server.php";
   <option value="Jazz">Jazz</option>
   <option value="Blues">Blues</option>
   <option value="Contemporary">Contemporary</option>
+  <option value="temp">Test Refreshing cache</option>
 </select></td></tr>
 <tr><td>Key</td><td>
 <select name='key'>

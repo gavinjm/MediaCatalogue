@@ -1,5 +1,6 @@
 <?php
 require_once('.\lib\functions.php');
+include_once('.\lib\header.php');
 
 try {
 	$arrContextOptions=array("ssl"=>array( "verify_peer"=>false, "verify_peer_name"=>false,'crypto_method' => STREAM_CRYPTO_METHOD_TLS_CLIENT));
@@ -16,16 +17,7 @@ try {
 } catch (Exception $e){
 	echo "<br>Error : ".$e->getLine()." ".$e->getMessage();
 }
-  $response = "<HTML>
- <HEAD>
-  <TITLE>THS Client Lookup</TITLE>
- </HEAD
- <BODY>
-<p>THS-Client</p>";
-$tail = "
-<a href='index.php'>New Home</a>
-</BODY>
-</HTML>";
+
   
   $genre = $_POST['genre'];
   $uid = "test user";
@@ -33,7 +25,7 @@ $tail = "
  if ($genre != ''){
  try {	  
 	$response = $client->getCatalogEntry($genre,$uid);
-	echo $response.$tail;
+	echo $response;
 	//echo "<br>Response:" . $client->__getLastResponse();
  } catch (Exception $e){
     echo "Error : line =".$e->getLine()."  Message= ".$e->getMessage();
@@ -42,5 +34,5 @@ $tail = "
   
   
   }
-  
+  include_once('lib\\footer.php');
 ?>

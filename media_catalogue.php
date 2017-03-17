@@ -1,24 +1,4 @@
-<html>
- <head>
-  <title>Media Catalog</title>
-  <style>
-  table {
-	  font-family: arial, sans-serif;
-	  border-collapse: collapse;
-	  width: 100%;
-  }
-  td,th {
-	  border: 1px solid #dddddd;
-	  text-align: left;
-	  padding: 8px;
-  }
-  tr: nth-child(even){
-	  background-color: #dddddd;
-  }
-  </style>
- </head>
- <body>
- <a href='index.php'>Home</a>
+<?php include_once('lib\header.php'); ?>
 <form action='getDirListing.php' method='post'>
  <table>
  <tr><th>Local Media Catalog</th><th>Options</th></tr>
@@ -39,5 +19,7 @@
  <tr><td><input type='hidden' name='action' value='SHOW'></td><td><input type='submit'/></td></tr>
  </table>
  </form>
- </body>
- </html>
+ 
+<?php 
+include_once('lib\\footer.php')
+?>

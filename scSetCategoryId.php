@@ -1,12 +1,8 @@
 <?php 
+if ($_POST){
 $catalogId = $_POST['catalogueId'];
- $response= "<HTML>
- <HEAD>
-  <TITLE>Catalog</TITLE>
- </HEAD
- <BODY>
- <a href='index.php'>Home</a>";
- $tail ="</BODY></HTML>";
+}
+include_once('lib\\header.php');
 
 try {
       $arrContextOptions=array("ssl"=>array( "verify_peer"=>false, "verify_peer_name"=>false,'crypto_method' => STREAM_CRYPTO_METHOD_TLS_CLIENT));
@@ -28,10 +24,11 @@ try {
     
   try {
 	 $result = $client->setCatalogEntry($catalogId);
-	echo $response."<br>".$result.$tail;
+	echo $result;
+	
   } catch (Exception $e) {
 	  //echo $response;
 	  echo "Error:   ( Catalog ID = ".$catalogId." ) Line = ".$e->getLine()."  ".$e->getMessage();
   }
-  
+include_once('lib\\footer.php');  
 ?>

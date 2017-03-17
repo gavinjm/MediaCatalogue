@@ -1,17 +1,9 @@
 <?php 
 require_once 'lib\\functions.php';
 require_once "soap-server.php";
-
+include('lib\\header.php');
 ?>
-<HTML>
- <HEAD>
-  <TITLE>Media Catalog</TITLE>
- </HEAD
- <BODY>
-<table border='1' cellpadding='10px'><tr><td><a href="media_catalogue.php">Media Catalogue</a></td>
-<td><a href="Backup.php">Back Up</a></td></tr></table>
 
-<h3>Testing Web Service WSDL File</h3>
 
 <form action="scGenre.php" method="post">
 <table>
@@ -47,6 +39,4 @@ require_once "soap-server.php";
 <td><input type="hidden" name="choice" value="Set"/><input type="submit"/></td></tr></table>
 </form>
 
-
-</BODY>
-</HTML>
+<?php include_once ('lib\\footer.php') ?>

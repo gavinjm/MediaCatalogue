@@ -3,13 +3,8 @@ require_once '.\lib\functions.php';
 
 function getCatalogEntry($genreId,$uid){
 if($genreId=='Jazz') 
-return "<HTML>
- <HEAD>
-  <TITLE>Catalog</TITLE>
- </HEAD
- <BODY>
-<h3>Jazz Catalog ".$uid."</h3>
- <table border>
+return "<h3>Jazz Catalog ".$uid."</h3>
+<table border>
 <tr><th>CatalogId</th>
 <th>Journal</th><th>Section
 </th><th>Edition</th><th>
@@ -19,21 +14,13 @@ Title</th><th>Author</th>
 XML</td><td>October 2005</td>
 <td>Guitar</td>
 <td>Al Di Meola</td></tr>
-</table>
-<a href='index.php'>Back</a>
-</BODY>
-</HTML>";
+</table>";
   
 elseif ($genreId='Classical') 
 
-return "<HTML>
- <HEAD>
-  <TITLE>Catalog</TITLE>
- </HEAD
- <BODY>
+return "
 <h3>Classical Catalog</h3>
  <table border>
-
 <tr><th>CatalogId</th><th>
 Journal</th><th>Section</th>
 <th>Edition</th><th>Title
@@ -43,23 +30,13 @@ Journal</th><th>Section</th>
 <td>XML</td><td>July 2006</td>
 <td>Acoustic Guitar</td><td>Julian Bream</td>
 </tr>
-</table>
-<a href='index.html'>Back</a>
-</BODY>
-</HTML>";
+</table>";
 } 
 
 function setCatalogEntry($genre){
 	
-return "<HTML>
- <HEAD>
-  <TITLE>Set Catalog</TITLE>
- </HEAD
- <BODY>
-<h3>Setting the genre to: ".$genre."</h3>
- <a href='index.php'>Back</a>
-</BODY>
-</HTML>";
+return "<h3>Setting the genre to: ".$genre."</h3>";
+
 }
 
 /*

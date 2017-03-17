@@ -1,27 +1,25 @@
-<?php 
-// Functions and Constant definitions
-
-/* Constants
-   
-*/
+<?php
+ 
+/* Functions and Constant definitions
+*
+*/ 
+ 
 define('__ROOT__', dirname(dirname(__FILE__).'\\mcat'));
 define('root', dirname(dirname(__FILE__).'\\mcat'));
 define('hello','Hello World');
-  
+// Filter file types - Global variable accessed in functions via $GLOBALS['filetypes']
+$filetypes = array('mp3','mp4','jpg','pdf','avi','ogg','wpl','wma','zip','php','wsdl','xls');  
 
-/* Functions
-
+/* getDirectoryListing
  *  
- *
- */
- 
- 
+ *   Returns an array containing files in directory $path
+ *   if $path is empty or not supplied a listing of the files in upload dir is returned.
+ */  
 
 function getDirectoryListing($path=''){
  if ($path =='')  { 
-   $path = realpath(root)."\\uploads";
+   $path = realpath(root);//."\\mcat\\uploads";
  }
-// echo "Search path = ".$path;
  $fnames = array();
  $cnt = 0;
 foreach (new DirectoryIterator($path) as $fileinfo){
@@ -34,7 +32,7 @@ foreach (new DirectoryIterator($path) as $fileinfo){
 
 // Returns the file suffix/extension returns '' if directory
 function getSuffix($str){
-	$filetypes = array('mp3','mp4','jpg','pdf','avi','ogg','wpl','wma','zip','php','wsdl'); // Filter file types
+	
 	$sfx = explode('.',$str);
 	$suff = '';
 	if (count($sfx) >=2){ // Multiple . in the name, ext will be in the last one
@@ -43,7 +41,7 @@ function getSuffix($str){
    	else {   // Only name and ext so we can just send back  $sfx[0]
 		$suff = $sfx[0];
 	}
- if (in_array($suff,$filetypes))
+ if (in_array($suff,$GLOBALS['filetypes']))   // References global $filetypes
    return $suff;
  else return 'err';
 }

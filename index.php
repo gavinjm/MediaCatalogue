@@ -35,7 +35,7 @@ include('lib\\header.php');
 
 <table>
 <tr><th>Set</th><th>Cat</th><th>ID</th></tr>
-<tr><td>Set the Categorie ID:</td><td><input type="text" name="catalogueId"/></td>
+<tr><td>Set the Category ID:</td><td><input type="text" name="catalogueId"/></td>
 <td><input type="hidden" name="choice" value="Set"/><input type="submit"/></td></tr></table>
 </form>
 
